@@ -21,8 +21,6 @@
 
 ---
 
-## The problem
-
 KodAi is an iPhone assistant with no server behind it. A 1.2B-parameter model ships inside the app bundle and runs through llama.cpp on the device's GPU. You talk to it normally; when you ask for something actionable it calls a tool, such as creating a Calendar event, adding a Reminder, or searching your local notes.
 
 A 1.2B model is roughly a hundredth the size of the models that made tool-calling look easy. Left alone it emits malformed JSON, invents arguments, narrates instead of acting, and routes "show me my to-do list" into creating a to-do. Most of the work here is closing that gap. The output format is constrained at the sampler by a grammar built from the tool catalog, so an invalid call cannot be generated in the first place. Whatever gets through is checked by a validator that owns the semantics the grammar cannot express.
@@ -117,6 +115,10 @@ Swift 6.2 · SwiftUI · SwiftData · Swift Testing · llama.cpp b9775 (vendored 
 **Native, calm, and fast.** It should belong beside Notes, Reminders, and Calendar. Semantic text styles, Reduce Motion-aware transitions, system contrast and transparency behavior throughout.
 
 ---
+
+**Public artifact:** [tool-guardrails](public-artifacts/tool-guardrails/) is a small, tested
+Swift reference implementation of the grammar and semantic-validation boundary used for
+local tool calling.
 
 <div align="center">
 
