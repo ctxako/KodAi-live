@@ -1,0 +1,27 @@
+[
+  {
+    "name": "calendar_create_event",
+    "summary": "Create a calendar event.",
+    "arguments": [
+      { "name": "title", "type": "string", "required": true },
+      { "name": "start_date", "type": "string", "required": true },
+      { "name": "end_date", "type": "string", "required": false },
+      { "name": "all_day", "type": "boolean", "required": false }
+    ]
+  },
+  {
+    "name": "reminders_create",
+    "summary": "Create a reminder.",
+    "arguments": [
+      { "name": "title", "type": "string", "required": true },
+      { "name": "due_date", "type": "string", "required": false }
+    ]
+  },
+  {
+    "name": "respond",
+    "summary": "Answer the user in plain language without touching any store.",
+    "arguments": [
+      { "name": "message", "type": "string", "required": true }
+    ]
+  }
+]
